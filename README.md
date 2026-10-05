@@ -201,9 +201,11 @@ CSCS-AL-partial/
 └── tests/            # Unit tests for the algorithmic core (no GPU / dataset required)
 ```
 
-**What is *not* included in this release**: the custom nnU-Net trainer (Ranger21-based
-optimizer/scheduler + the provenance-weighted-loss trainer variant that consumes the
-per-voxel weight maps produced by `partial_correction`) is released separately — see
+**What is *not* included in this release**: the custom nnU-Net trainer (Ranger22
+optimizer/scheduler, adapted from [Ranger21](https://github.com/lessw2020/Ranger21), +
+the provenance-weighted-loss trainer variant that consumes the per-voxel weight maps
+produced by `partial_correction`) is released separately as
+[CSCS-AL-nnunet-trainer](https://github.com/rhattat/CSCS-AL-nnunet-trainer) — see
 `docs/method_overview.md` for the interface it expects (a 2-channel target: label +
 `round(weight * 1000)` as the second channel). SSL feature extraction (frozen Swin-UNETR,
 masked-inpainting pretraining) is likewise documented but not bundled here;

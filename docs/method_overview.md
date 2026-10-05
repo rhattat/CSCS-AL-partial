@@ -95,8 +95,12 @@ label). A custom nnU-Net v2 trainer then:
   get a uniform weight of 1.0 — low-resolution supervision heads do not benefit from
   patch-level weighting).
 
-This trainer (and its Ranger21-based optimizer/scheduler) is released as a separate
-artifact; this repository is self-contained for everything upstream of it (deciding which
+This trainer (and its Ranger21-based optimizer/scheduler) is released separately as
+[CSCS-AL-nnunet-trainer](https://github.com/rhattat/CSCS-AL-nnunet-trainer), a derivative
+of [nnU-Net](https://github.com/MIC-DKFZ/nnUNet) (Isensee et al., 2021) and
+[Ranger21](https://github.com/lessw2020/Ranger21) (Wright & Demeure, 2021) — see that
+repository's README for citation details. This repository is self-contained for
+everything upstream of it (deciding which
 volumes to query and which patches to correct).
 
 ## 5. Evaluation (`cscs_al_partial.evaluation`)
