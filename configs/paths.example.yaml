@@ -1,0 +1,18 @@
+# ============================================================
+# paths.example.yaml -- template for real filesystem paths
+# ============================================================
+# Copy this file to `paths.yaml` (gitignored, see .gitignore) and fill in
+# your own paths. Nothing in this repository ships real dataset paths.
+
+sources:
+  example_dataset:
+    images: "/path/to/data/example_dataset/images"
+    labels: "/path/to/data/example_dataset/labels"
+    train_file: "/path/to/data/example_dataset/train_ids.txt"
+    val_file: "/path/to/data/example_dataset/val_ids.txt"
+
+embeddings:
+  example_dataset: "/path/to/data/example_dataset/embeddings"
+
+ssl_features:
+  example_dataset: "/path/to/data/example_dataset/ssl_features"

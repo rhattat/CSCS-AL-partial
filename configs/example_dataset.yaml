@@ -1,0 +1,24 @@
+# ============================================================
+# example_dataset.yaml -- template for a per-dataset config
+# ============================================================
+# Copy this file to `{your_dataset_name}.yaml` and adjust. Values below
+# are placeholders, not figures from any dataset used in the paper.
+
+dataset:
+  name: "example_dataset"
+  n_train: 40
+  n_val: 10
+  n_channels: 1
+  channel_names: {"0": "modality_a"}
+  labels: {"background": 0, "class_a": 1, "class_b": 2}
+  fg_labels: [1, 2]
+  id_suffixes: ["_0000", ".nii.gz", ".nii"]
+
+budgets:
+  cold_start_k: 6      # K0, volumes selected at round 0
+  round_k: 3            # K_r, volumes queried per subsequent round
+
+# Leave null to compute DCR = Spearman(U_ssl, T_ssl) from your own pool at
+# runtime (see cold_start.CSCSColdStart); set a float here only if you want
+# to fix it explicitly instead (e.g. to reuse a previously-computed value).
+dcr_precomputed: null

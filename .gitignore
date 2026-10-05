@@ -1,0 +1,81 @@
+# ============================================================
+# CSCS-AL (partial-correction release) .gitignore
+# ============================================================
+
+# --- Medical imaging data (NEVER commit) ---
+data/
+*.nii.gz
+*.nii
+*.mha
+*.mhd
+*.nrrd
+
+# --- Real filesystem paths (copy configs/paths.example.yaml -> paths.yaml) ---
+configs/paths.yaml
+
+# --- nnU-Net directories ---
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+
+# --- Model checkpoints ---
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# --- Large numpy arrays ---
+*.npy
+*.npz
+# Keep small example files:
+!examples/toy_*.npy
+
+# --- Outputs and results (too large, dataset-specific) ---
+outputs/
+output_clean/
+predictions/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.installed.cfg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+.conda/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+wandb/
+mlruns/
+
+# --- Temporary files ---
+tmp/
+temp/
+*.tmp
+*.bak

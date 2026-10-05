@@ -1,0 +1,37 @@
+# ============================================================
+# default.yaml -- shared experiment parameters (dataset-agnostic)
+# ============================================================
+
+# --- Task-model training (fill in whatever your own training loop needs;
+#     this repo does not ship a trainer, see docs/method_overview.md) ---
+training:
+  configuration: "3d_fullres"
+  fold: 0
+  device: "cuda:0"
+
+retraining_modes: ["from_scratch", "finetune"]
+
+# --- Convergence check (see acquisition.ConvergenceChecker) ---
+convergence:
+  delta_pp: 0.5      # |Delta Dice| threshold, in percentage points
+  patience: 2         # consecutive rounds below delta_pp before stopping
+  max_rounds: 9
+
+# --- Cold-start (see cold_start.CSCSColdStart) ---
+cscs:
+  clip_min: 0.3
+  clip_max: 0.7
+  smin_cluster: 3     # min cluster size before it is scored as-is (see cscs.py)
+
+# --- SSL / embeddings ---
+ssl:
+  embedding_dim: 768
+  knn_k: 20            # k for the KNN-density typicality fallback
+
+# --- Segmentation-uncertainty aggregation (see acquisition.compute_useg) ---
+uncertainty:
+  dilation_voxels: 3   # cubic dilation radius (Chebyshev) around the predicted foreground
+  min_fg_voxels: 100    # below this, fall back to mean entropy over the whole volume
+
+# --- Reproducibility ---
+seeds: [42, 123, 456]

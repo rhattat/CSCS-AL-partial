@@ -1,0 +1,12 @@
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+pandas>=2.0
+pyyaml>=6.0
+
+# Optional, only needed for specific pieces:
+# torch>=2.0          # SSL embedding extraction (not bundled in this release, see docs/method_overview.md)
+# matplotlib>=3.7      # plotting example curves
+# nnunetv2             # task segmentation model training/inference (bring your own trainer;
+                        # the custom Ranger-based provenance trainer is released separately)
+# pytest>=7.0          # running tests/

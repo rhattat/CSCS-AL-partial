@@ -1,0 +1,20 @@
+# ============================================================
+# strategies.yaml -- cold-start strategy registry
+# ============================================================
+# Mirrors cscs_al_partial/strategies/registry.py. This repo ships one
+# iterative-acquisition path (cscs_al_partial.acquisition); every entry
+# below documents which cold-start selector it is paired with, not a full
+# alternative round-level policy -- see registry.py's docstring.
+
+strategies:
+  randomCS:
+    cold_start: random
+    description: "Uniform random cold-start (baseline)"
+
+  probcover:
+    cold_start: probcover
+    description: "Coverage-based cold-start baseline"
+
+  cscs_curriculum:
+    cold_start: cscs
+    description: "CSCS cold-start + CSCS-AL curriculum rounds (S_r = T^(1-gamma_r) . U_seg^gamma_r)"
